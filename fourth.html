@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Reviews</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f7ff;
+    padding:80px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.heading{
+    text-align:center;
+    font-size:42px;
+    color:#252538;
+    margin-bottom:50px;
+}
+
+.review-container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.review-card{
+    background:#ffffff;
+    border:1px solid #e5e5e5;
+    border-radius:12px;
+    padding:20px;
+    width:350px;
+    transition:.3s;
+}
+
+.review-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.stars{
+    color:#f4b400;
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+.review-card h3{
+    font-size:30px;
+    color:#252538;
+    margin-bottom:10px;
+}
+
+.review-card p{
+    color:#666;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.reviewer{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.reviewer img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.reviewer-info h4{
+    font-size:14px;
+    color:#444;
+}
+
+.reviewer-info span{
+    font-size:13px;
+    color:#aaa;
+}
+
+@media(max-width:768px){
+
+    .heading{
+        font-size:32px;
+    }
+
+    .review-card{
+        width:100%;
+    }
+
+    .review-card h3{
+        font-size:24px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2 class="heading">What our users say</h2>
+
+    <div class="review-container">
+
+        
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+
+            <h3>Loved by Designers</h3>
+
+            <p>
+                This template instantly leveled up our presence.
+                – Studio Vertex
+            </p>
+
+            <div class="reviewer">
+                <img src="avatar.png" alt="Reviewer">
+
+                <div class="reviewer-info">
+                    <h4>Reviewer name</h4>
+                    <span>Date</span>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+
+            <h3>Loved by Designers</h3>
+
+            <p>
+                This template instantly leveled up our presence.
+                – Studio Vertex
+            </p>
+
+            <div class="reviewer">
+                <img src="avatar.png" alt="Reviewer">
+
+                <div class="reviewer-info">
+                    <h4>Reviewer name</h4>
+                    <span>Date</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+
+            <h3>Loved by Designers</h3>
+
+            <p>
+                This template instantly leveled up our presence.
+                – Studio Vertex
+            </p>
+
+            <div class="reviewer">
+                <img src="avatar.png" alt="Reviewer">
+
+                <div class="reviewer-info">
+                    <h4>Reviewer name</h4>
+                    <span>Date</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

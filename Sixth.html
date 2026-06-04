@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#f5f7ff;
+}
+
+.contact-section{
+    max-width:1200px;
+    margin:auto;
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px 50px;
+    gap:80px;
+}
+
+.left{
+    flex:1;
+}
+
+.left h1{
+    font-size:80px;
+    font-weight:700;
+    line-height:1;
+    color:#000;
+}
+
+.right{
+    flex:1;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:16px;
+    font-weight:500;
+    color:#111;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:18px 20px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    background:#fff;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#4f46e5;
+}
+
+textarea{
+    resize:none;
+    height:120px;
+}
+
+.btn{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:10px;
+    background:#4f46e5;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#4338ca;
+}
+
+
+
+@media(max-width:768px){
+
+    .contact-section{
+        flex-direction:column;
+        padding:50px 20px;
+        gap:40px;
+    }
+
+    .left h1{
+        font-size:50px;
+        text-align:center;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<section class="contact-section">
+
+    <div class="left">
+        <h1>
+            Let's Get in<br>
+            Touch
+        </h1>
+    </div>
+
+    <div class="right">
+
+        <form>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="example@email.com">
+            </div>
+
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" placeholder="full name">
+            </div>
+
+            <div class="form-group">
+                <label>Message</label>
+                <textarea placeholder="write your message...."></textarea>
+            </div>
+
+            <button type="submit" class="btn">
+                Get in Touch
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+</body>
+</html>

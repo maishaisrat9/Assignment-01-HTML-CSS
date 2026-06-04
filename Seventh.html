@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Footer</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#f5f7ff;
+}
+
+footer{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.logo{
+    font-size:100px;
+    font-weight:700;
+    color:#4E47FF;
+    margin-bottom:30px;
+}
+
+.description{
+    max-width:700px;
+    margin:0 auto 40px;
+    color:#8b8ba3;
+    font-size:22px;
+    line-height:1.6;
+}
+
+.nav-links{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#8b8ba3;
+    font-size:20px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#4E47FF;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .logo{
+        font-size:60px;
+    }
+
+    .description{
+        font-size:16px;
+    }
+
+    .nav-links{
+        gap:20px;
+    }
+
+    .nav-links a{
+        font-size:16px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<footer>
+
+    <h1 class="logo">LOGO</h1>
+
+    <p class="description">
+        Ready to elevate your online presence? Contact us today to discuss
+        your project and discover how we can bring your vision to life.
+    </p>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">How it Works</a>
+        <a href="#">Services</a>
+    </div>
+
+</footer>
+
+</body>
+</html>

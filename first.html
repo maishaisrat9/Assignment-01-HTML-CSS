@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark UI Template</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f5f7ff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* Background Pattern */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+        radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-1;
+}
+
+/* Navbar */
+.navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:30px 80px;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:700;
+    color:#4f46e5;
+}
+
+.signup-btn{
+    text-decoration:none;
+    background:#4f46e5;
+    color:#fff;
+    padding:14px 35px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.signup-btn:hover{
+    background:#4338ca;
+}
+
+/* Hero Section */
+.hero{
+    height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    font-weight:700;
+    line-height:1.2;
+    color:#23243a;
+    margin-bottom:40px;
+}
+
+.cta-btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#4f46e5;
+    color:#fff;
+    padding:14px 40px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.cta-btn:hover{
+    background:#4338ca;
+    transform:translateY(-2px);
+}
+
+/* Mobile Responsive */
+@media (max-width:768px){
+
+    .navbar{
+        padding:20px;
+    }
+
+    .logo{
+        font-size:1.5rem;
+    }
+
+    .hero-content h1{
+        font-size:2.2rem;
+    }
+
+    .signup-btn,
+    .cta-btn{
+        padding:12px 25px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">LOGO</div>
+
+    <a href="#" class="signup-btn">Sign Up</a>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>
+            Cool Dark UI Template for<br>
+            Webflow Agencies!
+        </h1>
+
+        <a href="#" class="cta-btn">Stay Focused</a>
+    </div>
+</section>
+
+</body>
+</html>

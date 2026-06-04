@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>See It In Action</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f6fc;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 80px;
+}
+
+.action-section{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+}
+
+.content{
+    flex:1;
+}
+
+.content h1{
+    font-size:48px;
+    color:#252538;
+    margin-bottom:20px;
+}
+
+.content p{
+    font-size:22px;
+    color:#9b9bab;
+    line-height:1.5;
+    margin-bottom:30px;
+    max-width:500px;
+}
+
+.btn{
+    display:inline-block;
+    background:#4f46e5;
+    color:white;
+    text-decoration:none;
+    padding:14px 32px;
+    border-radius:8px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#4338ca;
+}
+
+.image-box{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.image-box img{
+    width:100%;
+    max-width:450px;
+    border-radius:30px;
+    display:block;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .container{
+        padding:40px 20px;
+    }
+
+    .action-section{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .content p{
+        max-width:100%;
+    }
+
+    .content h1{
+        font-size:36px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <section class="action-section">
+
+        <div class="content">
+            <h1>See It in Action</h1>
+
+            <p>
+                Explore the live preview and imagine your brand
+                in this bold new look.
+            </p>
+
+            <a href="#" class="btn">Launch Live Preview</a>
+        </div>
+
+        <div class="image-box">
+            <img src="wc-mini.png" alt="Webflow Preview">
+        </div>
+
+    </section>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flower Shop</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f5fb;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    width:90%;
+    margin:auto;
+    padding:25px 0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo img{
+    width:120px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    align-items:center;
+}
+
+nav ul li{
+    margin-left:35px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#888;
+    font-size:15px;
+}
+
+.active{
+    color:black;
+    font-weight:bold;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    width:90%;
+    margin:70px auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.left{
+    width:45%;
+}
+
+.left h1{
+    font-size:60px;
+    line-height:1.2;
+    font-family:Georgia, serif;
+}
+
+.orange{
+    color:#f26522;
+}
+
+.left p{
+    margin-top:20px;
+    color:#777;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.right{
+    width:45%;
+    text-align:right;
+}
+
+.right img{
+    width:420px;
+    max-width:100%;
+}
+
+
+/* ================= OUR PLANTS ================= */
+
+.plants{
+    width:90%;
+    margin:80px auto;
+    text-align:center;
+}
+
+
+/* Heading */
+
+.plants h2{
+    font-family:Georgia, serif;
+    font-size:30px;
+    color:#f26522;
+    margin-bottom:5px;
+}
+
+.plants h2 span{
+    color:black;
+}
+
+.plants-description{
+    width:600px;
+    max-width:100%;
+    margin:0 auto 25px;
+
+    font-size:11px;
+    line-height:1.5;
+    color:#777;
+}
+
+
+/* Product Grid */
+
+.plant-container{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:15px;
+}
+
+
+/* Product */
+
+.plant-card{
+    text-align:center;
+}
+
+.plant-card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+}
+
+.plant-name{
+    font-size:12px;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+.price{
+    font-size:11px;
+    color:#555;
+    margin-top:4px;
+}
+
+
+/* Orange Button */
+
+.cart-btn{
+    width:100%;
+    margin-top:8px;
+    padding:7px 0;
+
+    border:none;
+    background:#f26522;
+    color:white;
+
+    font-size:9px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.cart-btn:hover{
+    background:#d94f0d;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .left,
+    .right{
+        width:100%;
+    }
+
+    .left h1{
+        font-size:40px;
+    }
+
+    .right{
+        margin-top:30px;
+        text-align:center;
+    }
+
+    .plant-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    nav ul li{
+        margin-left:10px;
+    }
+
+}
+/* ================= FLOWER & PLANTS SECTION ================= */
+
+.flower-lover{
+    width:90%;
+    margin:70px auto;
+
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.flower-image{
+    width:50%;
+    position:relative;
+}
+
+.flower-image img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    display:block;
+}
+
+.trusted{
+    position:absolute;
+    width:90px;
+    height:90px;
+
+    top:-25px;
+    right:-20px;
+
+    border-radius:50%;
+}
+
+.flower-info{
+    width:50%;
+}
+
+.flower-info h2{
+    font-family:Georgia, serif;
+    font-size:32px;
+    line-height:1.2;
+    color:#222;
+
+    margin-bottom:15px;
+}
+
+.flower-info ul{
+    padding-left:20px;
+}
+
+.flower-info li{
+    color:#777;
+    font-size:13px;
+    line-height:1.4;
+    margin-bottom:15px;
+}
+ 
+
+    
+    
+
+
+
+/* ================= LATEST DEALS ================= */
+
+.latest-deals{
+    width:55%;
+    margin:80px auto;
+    text-align:center;
+}
+
+.latest-deals h2{
+    font-family:Georgia, serif;
+    font-size:28px;
+    color:#f26522;
+    margin-bottom:5px;
+}
+
+.latest-deals h2 span{
+    color:#222;
+}
+
+.deals-description{
+    width:550px;
+    max-width:100%;
+    margin:0 auto 35px;
+
+    color:#777;
+    font-size:9px;
+    line-height:1.4;
+}
+
+
+/* Deals Container */
+
+.deals-container{
+    width:100%;
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    align-items:stretch;
+}
+
+
+/* Left side */
+
+.deals-left{
+    width:32%;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+
+/* Right side */
+
+.deals-right{
+    width:68%;
+}
+
+
+/* All picture boxes */
+
+.deal-box{
+    position:relative;
+    overflow:hidden;
+    border-radius:7px;
+}
+
+
+/* Left pictures */
+
+.deals-left .deal-box{
+    width:100%;
+    height:67px;
+}
+
+
+/* Right big picture */
+
+.deals-right .deal-box{
+    width:100%;
+    height:140px;
+}
+
+
+/* Pictures */
+
+.deal-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+
+/* Text on picture */
+
+.deal-text{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%, -50%);
+
+    width:100%;
+
+    color:white;
+    text-align:center;
+
+    text-shadow:1px 1px 3px black;
+}
+
+.deal-text h3{
+    font-size:9px;
+    margin-bottom:3px;
+}
+
+.deal-text a{
+    color:white;
+    text-decoration:none;
+    font-size:7px;
+    font-weight:bold;
+}
+
+
+/* Right picture text */
+
+.deals-right .deal-text h3{
+    font-size:17px;
+}
+
+.deals-right .deal-text a{
+    font-size:10px;
+}
+/* ================= SUBSCRIBE SECTION ================= */
+
+.subscribe{
+    width:90%;
+    height:180px;
+
+    margin:70px auto 0;
+
+    position:relative;
+
+    background-image:url("news-letter-bg.png");
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+
+/* Heading */
+
+.subscribe h2{
+    color:white;
+    font-family:Georgia, serif;
+    font-size:24px;
+
+    margin-bottom:12px;
+}
+
+
+/* Form */
+
+.subscribe-form{
+    display:flex;
+    width:320px;
+    height:22px;
+}
+
+
+/* Email */
+
+.subscribe-form input{
+    width:220px;
+
+    border:none;
+    outline:none;
+
+    padding:5px 8px;
+
+    font-size:8px;
+}
+
+
+/* Button */
+
+.subscribe-form button{
+    width:100px;
+
+    border:none;
+
+    background:#f26522;
+    color:white;
+
+    font-size:8px;
+
+    cursor:pointer;
+}
+
+.subscribe-form button:hover{
+    background:#d94f0d;
+}
+/* ================= FOOTER ================= */
+
+.footer{
+    width:90%;
+    margin:0 auto;
+    padding:40px 0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+
+    background:#f4f5fb;
+}
+
+
+/* Logo Section */
+
+.footer-logo{
+    width:30%;
+}
+
+.footer-logo img{
+    width:95px;
+}
+
+.footer-logo p{
+    width:220px;
+
+    margin-top:10px;
+
+    color:#777;
+
+    font-size:12px;
+    line-height:1.5;
+}
+
+
+/* Footer Links */
+
+.footer-links{
+    width:45%;
+
+    display:flex;
+    justify-content:space-around;
+}
+
+.footer-column{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.footer-column a{
+    text-decoration:none;
+
+    color:#777;
+
+    font-size:12px;
+}
+
+.footer-column a:hover{
+    color:#f26522;
+}
+
+
+/* Social Media */
+
+.social{
+    width:20%;
+
+    display:flex;
+    justify-content:flex-end;
+    gap:18px;
+}
+
+.social a{
+    text-decoration:none;
+
+    font-size:17px;
+
+    color:#1684c7;
+}
+
+.social a:nth-child(2){
+    color:#222;
+}
+
+.social a:nth-child(3){
+    color:#1877f2;
+}
+
+.social a:nth-child(4){
+    color:red;
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="#" class="active">Home</a>
+            </li>
+
+            <li>
+                <a href="#">Shop</a>
+            </li>
+
+            <li>
+                <a href="#">About us</a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Cart ($56)
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+
+    <div class="left">
+
+        <h1>
+
+            ALWAYS
+            <span class="orange">FRESH</span>
+
+            <br>
+
+            <span class="orange">FLOWERS</span>
+
+        </h1>
+
+
+        <p>
+
+            Indulge your senses with the beauty and fragrance
+            of our fresh flower shop. From classic roses to
+            exotic blooms, we offer a wide variety of fresh
+            flowers that are perfect for any occasion.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="right">
+
+        <img src="hero-flower.png" alt="Flowers">
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ================= OUR PLANTS ================= -->
+
+<section class="plants">
+
+
+    <h2>
+
+        Our <span>Plants</span>
+
+    </h2>
+
+
+    <p class="plants-description">
+
+        Indulge your senses with the beauty and fragrance of our
+        fresh flower shop. From classic roses to exotic blooms,
+        we offer a wide variety of fresh flowers that are perfect
+        for any occasion.
+
+    </p>
+
+
+
+    <div class="plant-container">
+
+
+        <!-- Plant 1 -->
+
+        <div class="plant-card">
+
+            <img src="sample-flower-image.png" alt="Lily Blossom">
+
+            <h3 class="plant-name">
+                Lily Blossom
+            </h3>
+
+            <p class="price">
+                20 USD
+            </p>
+
+            <button class="cart-btn">
+                ADD TO CART
+            </button>
+
+        </div>
+
+
+
+        <!-- Plant 2 -->
+
+        <div class="plant-card">
+
+            <img src="sample-flower-image.png" alt="Lily Blossom">
+
+            <h3 class="plant-name">
+                Lily Blossom
+            </h3>
+
+            <p class="price">
+                20 USD
+            </p>
+
+            <button class="cart-btn">
+                ADD TO CART
+            </button>
+
+        </div>
+
+
+
+        <!-- Plant 3 -->
+
+        <div class="plant-card">
+
+            <img src="sample-flower-image.png" alt="Lily Blossom">
+
+            <h3 class="plant-name">
+                Lily Blossom
+            </h3>
+
+            <p class="price">
+                20 USD
+            </p>
+
+            <button class="cart-btn">
+                ADD TO CART
+            </button>
+
+        </div>
+
+
+
+        <!-- Plant 4 -->
+
+        <div class="plant-card">
+
+            <img src="sample-flower-image.png" alt="Lily Blossom">
+
+            <h3 class="plant-name">
+                Lily Blossom
+            </h3>
+
+            <p class="price">
+                20 USD
+            </p>
+
+            <button class="cart-btn">
+                ADD TO CART
+            </button>
+
+        </div>
+
+
+
+        <!-- Plant 5 -->
+
+        <div class="plant-card">
+
+            <img src="sample-flower-image.png" alt="Lily Blossom">
+
+            <h3 class="plant-name">
+                Lily Blossom
+            </h3>
+
+            <p class="price">
+                20 USD
+            </p>
+
+            <button class="cart-btn">
+                ADD TO CART
+            </button>
+
+        </div>
+
+
+
+        <!-- Plant 6 -->
+
+        <div class="plant-card">
+
+            <img src="sample-flower-image.png" alt="Lily Blossom">
+
+            <h3 class="plant-name">
+                Lily Blossom
+            </h3>
+
+            <p class="price">
+                20 USD
+            </p>
+
+            <button class="cart-btn">
+                ADD TO CART
+            </button>
+
+        </div>
+
+
+
+        <!-- Plant 7 -->
+
+        <div class="plant-card">
+
+            <img src="sample-flower-image.png" alt="Lily Blossom">
+
+            <h3 class="plant-name">
+                Lily Blossom
+            </h3>
+
+            <p class="price">
+                20 USD
+            </p>
+
+            <button class="cart-btn">
+                ADD TO CART
+            </button>
+
+        </div>
+
+
+
+        <!-- Plant 8 -->
+
+        <div class="plant-card">
+
+            <img src="sample-flower-image.png" alt="Lily Blossom">
+
+            <h3 class="plant-name">
+                Lily Blossom
+            </h3>
+
+            <p class="price">
+                20 USD
+            </p>
+
+            <button class="cart-btn">
+                ADD TO CART
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+<!-- ================= FLOWER & PLANTS LOVER ================= -->
+
+<section class="flower-lover">
+
+    <div class="flower-image">
+
+        <img src="flower-store.png" alt="Flower Shop">
+
+        <img class="trusted" src="trusted badges.png" alt="Trusted">
+
+    </div>
+
+
+    <div class="flower-info">
+
+        <h2>
+            Flower & Plants<br>
+            Lover
+        </h2>
+
+        <ul>
+
+            <li>
+                Indulge your senses with the beauty and
+                fragrance of our fresh flower shop. From classic
+                roses to exotic blooms, we offer a wide variety
+                of fresh flowers.
+            </li>
+
+            <li>
+                Indulge your senses with the beauty and
+                fragrance of our fresh flower shop. From classic
+                roses to exotic blooms, we offer a wide variety
+                of fresh flowers.
+            </li>
+
+            <li>
+                Indulge your senses with the beauty and
+                fragrance of our fresh flower shop. From classic
+                roses to exotic blooms, we offer a wide variety
+                of fresh flowers.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+<!-- ================= LATEST DEALS ================= -->
+
+<section class="latest-deals">
+
+    <h2>
+        Latest <span>Deals</span>
+    </h2>
+
+
+    <p class="deals-description">
+
+        Indulge your senses with the beauty and fragrance
+        of our fresh flower shop. From classic roses to
+        exotic blooms, we offer a wide variety of fresh.
+
+    </p>
+
+
+    <div class="deals-container">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="deals-left">
+
+
+            
+
+            <div class="deal-box">
+
+                <img src="deal1.png" alt="Bloom Plant">
+
+                <div class="deal-text">
+
+                    <h3>
+                        60% Off | Bloom Plant
+                    </h3>
+
+                    <a href="#">
+                        Shop Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            
+
+            <div class="deal-box">
+
+                <img src="deal2.png" alt="Ana Plant">
+
+                <div class="deal-text">
+
+                    <h3>
+                        30% Off | Ana Plant
+                    </h3>
+
+                    <a href="#">
+                        Shop Now
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="deals-right">
+
+            <div class="deal-box">
+
+                <img src="deal-zabo.png" alt="Zabo Plant">
+
+                <div class="deal-text">
+
+                    <h3>
+                        25% Off | Zabo Plant
+                    </h3>
+
+                    <a href="#">
+                        Shop Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+<!-- ================= SUBSCRIBE ================= -->
+
+<section class="subscribe">
+
+    <h2>
+        Join the colorful Bunch
+    </h2>
+
+
+    <form class="subscribe-form">
+
+        <input
+            type="email"
+            placeholder="Write email"
+        >
+
+        <button type="submit">
+            Subscribe
+        </button>
+
+    </form>
+
+</section>
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+
+    <!-- Logo -->
+
+    <div class="footer-logo">
+
+        <img src="logo.png" alt="Logo">
+
+        <p>
+            Indulge your senses with the beauty and
+            fragrance of our fresh flower shop.
+        </p>
+
+    </div>
+
+
+
+    <!-- Links -->
+
+    <div class="footer-links">
+
+
+        <div class="footer-column">
+
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Help Center</a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Social Media -->
+
+    <div class="social">
+
+        <a href="#">
+            <i class="icon-linkedin"></i>
+        </a>
+
+        <a href="#">
+            <i class="icon-twitter"></i>
+        </a>
+
+        <a href="#">
+            <i class="icon-facebook"></i>
+        </a>
+
+        <a href="#">
+            <i class="icon-youtube"></i>
+        </a>
+
+    </div>
+
+
+</footer>
+</body>
+
+</html>

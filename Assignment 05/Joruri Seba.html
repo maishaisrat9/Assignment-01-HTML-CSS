@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emergency Service Directory</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f0fff4;
+            color: #222;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 55px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-left img {
+            width: 34px;
+            height: 34px;
+            object-fit: contain;
+        }
+
+        .nav-title {
+            color: #006a4e;
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 14px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-box {
+            background: #eaffef;
+            border-radius: 20px;
+            padding: 7px 14px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .coin-small {
+            width: 15px;
+            height: 15px;
+            object-fit: contain;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            background: linear-gradient(90deg, #006a4e, #004d3a);
+            color: white;
+            text-align: center;
+            padding: 10px 20px 14px;
+        }
+
+        .hero img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            margin-bottom: 4px;
+        }
+
+        .hero h1 {
+            font-size: 18px;
+            margin-bottom: 7px;
+        }
+
+        .hero p {
+            font-size: 8px;
+        }
+
+        /* ================= MAIN ================= */
+
+        .main-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 12px;
+            display: grid;
+            grid-template-columns: 1fr 275px;
+            gap: 12px;
+        }
+
+        /* ================= CARDS ================= */
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e2e2e2;
+            border-radius: 5px;
+            padding: 11px;
+            min-height: 125px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .service-icon {
+            width: 32px;
+            height: 32px;
+            background: #ffe8e8;
+            border-radius: 7px;
+            padding: 5px;
+            object-fit: contain;
+        }
+
+        .heart-btn {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 17px;
+            color: #666;
+        }
+
+        .heart-btn:hover {
+            color: red;
+            transform: scale(1.1);
+        }
+
+        .heart-btn.liked {
+            color: red;
+        }
+
+        .card h3 {
+            font-size: 12px;
+            margin-top: 8px;
+            margin-bottom: 2px;
+        }
+
+        .category {
+            color: #777;
+            font-size: 8px;
+            margin-bottom: 5px;
+        }
+
+        .number {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f1f1f1;
+            color: #777;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 8px;
+        }
+
+        .card-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+            margin-top: 8px;
+        }
+
+        .copy-btn,
+        .call-btn {
+            height: 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 8px;
+        }
+
+        .copy-btn {
+            background: white;
+            border: 1px solid #ddd;
+            color: #666;
+        }
+
+        .call-btn {
+            background: #00a63c;
+            color: white;
+        }
+
+        .call-btn:hover {
+            background: #008d33;
+        }
+
+        .copy-btn:hover {
+            background: #f5f5f5;
+        }
+
+        /* ================= HISTORY ================= */
+
+        .history {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            min-height: 388px;
+            max-height: 388px;
+            overflow-y: auto;
+        }
+
+        .history-header {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 2;
+        }
+
+        .history-title {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .clear-btn {
+            background: #00a63c;
+            border: none;
+            color: white;
+            padding: 6px 13px;
+            border-radius: 15px;
+            font-size: 8px;
+            cursor: pointer;
+        }
+
+        .clear-btn:hover {
+            background: #008d33;
+        }
+
+        .history-list {
+            padding: 5px 10px;
+        }
+
+        .history-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .history-service {
+            font-size: 9px;
+            font-weight: bold;
+            line-height: 13px;
+        }
+
+        .history-number {
+            font-size: 8px;
+            color: #777;
+        }
+
+        .history-time {
+            font-size: 7px;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        .empty-history {
+            text-align: center;
+            color: #999;
+            font-size: 10px;
+            padding: 30px 10px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .history {
+                max-height: 350px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .cards-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .navbar {
+                padding: 0 10px;
+            }
+
+            .nav-box {
+                padding: 6px 9px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-title {
+                font-size: 10px;
+            }
+
+            .nav-right {
+                gap: 4px;
+            }
+
+            .nav-box {
+                font-size: 9px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="nav-left">
+
+            <img src="assets/logo.png" alt="Logo">
+
+            <div class="nav-title">
+                Emergency<br>
+                Service
+            </div>
+
+        </div>
+
+
+        <div class="nav-right">
+
+            <!-- Heart Count -->
+            <div class="nav-box">
+                <span>💗</span>
+                <span id="heartCount">0</span>
+            </div>
+
+            <!-- Coin Count -->
+            <div class="nav-box">
+
+                <span id="coinCount">100</span>
+
+                <img
+                    src="assets/coin.png"
+                    class="coin-small"
+                    alt="Coin"
+                >
+
+            </div>
+
+            <!-- Copy Count -->
+            <div class="nav-box">
+                <span id="copyCount">0</span>
+                <span>Copy</span>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <img
+            src="assets/logo-dark.png"
+            alt="Bangladesh Logo"
+        >
+
+        <h1>
+            Emergency Service Directory
+        </h1>
+
+        <p>
+            Government Emergency Services at Your Fingertip
+            - A Project by Government of the People's Republic of Bangladesh
+        </p>
+
+    </section>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-container">
+
+
+        <!-- ================= CARDS ================= -->
+
+        <section class="cards-container">
+
+
+            <!-- CARD 1 -->
+
+            <div class="card">
+
+                <div class="card-top">
+
+                    <img
+                        src="assets/emergency.png"
+                        class="service-icon"
+                        alt="Emergency"
+                    >
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    National Emergency Number
+                </h3>
+
+                <div class="category">
+                    National Emergency
+                </div>
+
+                <div class="number">
+                    999
+                </div>
+
+                <span class="tag">
+                    All
+                </span>
+
+                <div class="card-buttons">
+
+                    <button
+                        class="copy-btn"
+                        data-number="999"
+                    >
+                        📋 Copy
+                    </button>
+
+                    <button
+                        class="call-btn"
+                        data-name="National Emergency Number"
+                        data-number="999"
+                    >
+                        ☎ Call
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+
+            <div class="card">
+
+                <div class="card-top">
+
+                    <img
+                        src="assets/police.png"
+                        class="service-icon"
+                        alt="Police"
+                    >
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    Police Helpline Number
+                </h3>
+
+                <div class="category">
+                    Police
+                </div>
+
+                <div class="number">
+                    999
+                </div>
+
+                <span class="tag">
+                    Police
+                </span>
+
+                <div class="card-buttons">
+
+                    <button
+                        class="copy-btn"
+                        data-number="999"
+                    >
+                        📋 Copy
+                    </button>
+
+                    <button
+                        class="call-btn"
+                        data-name="Police Helpline Number"
+                        data-number="999"
+                    >
+                        ☎ Call
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+
+            <div class="card">
+
+                <div class="card-top">
+
+                    <img
+                        src="assets/fire-service.png"
+                        class="service-icon"
+                        alt="Fire Service"
+                    >
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    Fire Service Number
+                </h3>
+
+                <div class="category">
+                    Fire Service
+                </div>
+
+                <div class="number">
+                    999
+                </div>
+
+                <span class="tag">
+                    Fire
+                </span>
+
+                <div class="card-buttons">
+
+                    <button
+                        class="copy-btn"
+                        data-number="999"
+                    >
+                        📋 Copy
+                    </button>
+
+                    <button
+                        class="call-btn"
+                        data-name="Fire Service Number"
+                        data-number="999"
+                    >
+                        ☎ Call
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+
+            <div class="card">
+
+                <div class="card-top">
+
+                    <img
+                        src="assets/ambulance.png"
+                        class="service-icon"
+                        alt="Ambulance"
+                    >
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    Ambulance Service
+                </h3>
+
+                <div class="category">
+                    Ambulance
+                </div>
+
+                <div class="number">
+                    1949-999999
+                </div>
+
+                <span class="tag">
+                    Health
+                </span>
+
+                <div class="card-buttons">
+
+                    <button
+                        class="copy-btn"
+                        data-number="1949-999999"
+                    >
+                        📋 Copy
+                    </button>
+
+                    <button
+                        class="call-btn"
+                        data-name="Ambulance Service"
+                        data-number="1949-999999"
+                    >
+                        ☎ Call
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 5 -->
+
+            <div class="card">
+
+                <div class="card-top">
+
+                    <img
+                        src="assets/emergency.png"
+                        class="service-icon"
+                        alt="Women"
+                    >
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    Women & Child Helpline
+                </h3>
+
+                <div class="category">
+                    Women & Child Helpline
+                </div>
+
+                <div class="number">
+                    109
+                </div>
+
+                <span class="tag">
+                    Help
+                </span>
+
+                <div class="card-buttons">
+
+                    <button
+                        class="copy-btn"
+                        data-number="109"
+                    >
+                        📋 Copy
+                    </button>
+
+                    <button
+                        class="call-btn"
+                        data-name="Women & Child Helpline"
+                        data-number="109"
+                    >
+                        ☎ Call
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 6 -->
+
+            <div class="card">
+
+                <div class="card-top">
+
+                    <img
+                        src="assets/emergency.png"
+                        class="service-icon"
+                        alt="Anti Corruption"
+                    >
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    Anti-Corruption Helpline
+                </h3>
+
+                <div class="category">
+                    Anti-Corruption
+                </div>
+
+                <div class="number">
+                    106
+                </div>
+
+                <span class="tag">
+                    Govt.
+                </span>
+
+                <div class="card-buttons">
+
+                    <button
+                        class="copy-btn"
+                        data-number="106"
+                    >
+                        📋 Copy
+                    </button>
+
+                    <button
+                        class="call-btn"
+                        data-name="Anti-Corruption Helpline"
+                        data-number="106"
+                    >
+                        ☎ Call
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 7 -->
+
+            <div class="card">
+
+                <div class="card-top">
+
+                    <img
+                        src="assets/emergency.png"
+                        class="service-icon"
+                        alt="Electricity"
+                    >
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    Electricity Helpline
+                </h3>
+
+                <div class="category">
+                    Electricity Outage
+                </div>
+
+                <div class="number">
+                    16216
+                </div>
+
+                <span class="tag">
+                    Electricity
+                </span>
+
+                <div class="card-buttons">
+
+                    <button
+                        class="copy-btn"
+                        data-number="16216"
+                    >
+                        📋 Copy
+                    </button>
+
+                    <button
+                        class="call-btn"
+                        data-name="Electricity Helpline"
+                        data-number="16216"
+                    >
+                        ☎ Call
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 8 -->
+
+            <div class="card">
+
+                <div class="card-top">
+
+                    <img
+                        src="assets/brac.png"
+                        class="service-icon"
+                        alt="BRAC"
+                    >
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    Brac Helpline
+                </h3>
+
+                <div class="category">
+                    Brac
+                </div>
+
+                <div class="number">
+                    16445
+                </div>
+
+                <span class="tag">
+                    NGO
+                </span>
+
+                <div class="card-buttons">
+
+                    <button
+                        class="copy-btn"
+                        data-number="16445"
+                    >
+                        📋 Copy
+                    </button>
+
+                    <button
+                        class="call-btn"
+                        data-name="Brac Helpline"
+                        data-number="16445"
+                    >
+                        ☎ Call
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 9 -->
+
+            <div class="card">
+
+                <div class="card-top">
+
+                    <img
+                        src="assets/Bangladesh-Railway.png"
+                        class="service-icon"
+                        alt="Bangladesh Railway"
+                    >
+
+                    <button class="heart-btn">
+                        ♡
+                    </button>
+
+                </div>
+
+                <h3>
+                    Bangladesh Railway Helpline
+                </h3>
+
+                <div class="category">
+                    Bangladesh Railway
+                </div>
+
+                <div class="number">
+                    163
+                </div>
+
+                <span class="tag">
+                    Travel
+                </span>
+
+                <div class="card-buttons">
+
+                    <button
+                        class="copy-btn"
+                        data-number="163"
+                    >
+                        📋 Copy
+                    </button>
+
+                    <button
+                        class="call-btn"
+                        data-name="Bangladesh Railway Helpline"
+                        data-number="163"
+                    >
+                        ☎ Call
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= CALL HISTORY ================= -->
+
+        <aside class="history">
+
+            <div class="history-header">
+
+                <div class="history-title">
+                    ⏱ Call History
+                </div>
+
+                <button
+                    class="clear-btn"
+                    id="clearHistory"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div
+                class="history-list"
+                id="historyList"
+            >
+
+                <div class="empty-history">
+                    No call history yet.
+                </div>
+
+            </div>
+
+        </aside>
+
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // ================= VARIABLES =================
+
+        let coins = 100;
+        let hearts = 0;
+        let copies = 0;
+
+
+        // ================= ELEMENTS =================
+
+        const coinCount =
+            document.getElementById("coinCount");
+
+        const heartCount =
+            document.getElementById("heartCount");
+
+        const copyCount =
+            document.getElementById("copyCount");
+
+        const historyList =
+            document.getElementById("historyList");
+
+        const clearHistory =
+            document.getElementById("clearHistory");
+
+
+        // ================= HEART BUTTON =================
+
+        const heartButtons =
+            document.querySelectorAll(".heart-btn");
+
+        heartButtons.forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+                hearts++;
+
+                heartCount.textContent = hearts;
+
+                button.classList.add("liked");
+
+                button.textContent = "♥";
+
+            });
+
+        });
+
+
+        // ================= COPY BUTTON =================
+
+        const copyButtons =
+            document.querySelectorAll(".copy-btn");
+
+        copyButtons.forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+                const number =
+                    button.getAttribute("data-number");
+
+                navigator.clipboard.writeText(number)
+                    .then(function() {
+
+                        copies++;
+
+                        copyCount.textContent = copies;
+
+                        alert(
+                            number +
+                            " copied successfully!"
+                        );
+
+                    })
+                    .catch(function() {
+
+                        alert(
+                            "Could not copy the number."
+                        );
+
+                    });
+
+            });
+
+        });
+
+
+        // ================= CALL BUTTON =================
+
+        const callButtons =
+            document.querySelectorAll(".call-btn");
+
+        callButtons.forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+                const serviceName =
+                    button.getAttribute("data-name");
+
+                const serviceNumber =
+                    button.getAttribute("data-number");
+
+
+                // Check coins first
+
+                if (coins < 20) {
+
+                    alert(
+                        "You do not have enough coins to make this call."
+                    );
+
+                    return;
+
+                }
+
+
+                // Reduce 20 coins
+
+                coins = coins - 20;
+
+                coinCount.textContent = coins;
+
+
+                // Alert
+
+                alert(
+                    "Calling " +
+                    serviceName +
+                    " (" +
+                    serviceNumber +
+                    ")"
+                );
+
+
+                // Add history
+
+                addCallHistory(
+                    serviceName,
+                    serviceNumber
+                );
+
+            });
+
+        });
+
+
+        // ================= ADD CALL HISTORY =================
+
+        function addCallHistory(
+            serviceName,
+            serviceNumber
+        ) {
+
+            // Remove empty message
+
+            const emptyMessage =
+                historyList.querySelector(
+                    ".empty-history"
+                );
+
+            if (emptyMessage) {
+
+                emptyMessage.remove();
+
+            }
+
+
+            // Create history item
+
+            const historyItem =
+                document.createElement("div");
+
+            historyItem.className =
+                "history-item";
+
+
+            // Current time
+
+            const now =
+                new Date();
+
+            const time =
+                now.toLocaleTimeString(
+                    [],
+                    {
+                        hour: "numeric",
+                        minute: "2-digit"
+                    }
+                );
+
+
+            historyItem.innerHTML = `
+
+                <div>
+
+                    <div class="history-service">
+                        ${serviceName}
+                    </div>
+
+                    <div class="history-number">
+                        ${serviceNumber}
+                    </div>
+
+                </div>
+
+                <div class="history-time">
+                    ${time}
+                </div>
+
+            `;
+
+
+            // Add to top
+
+            historyList.prepend(historyItem);
+
+        }
+
+
+        // ================= CLEAR HISTORY =================
+
+        clearHistory.addEventListener(
+            "click",
+            function() {
+
+                historyList.innerHTML = `
+
+                    <div class="empty-history">
+                        No call history yet.
+                    </div>
+
+                `;
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Green Earth</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <div class="logo">
+                Green Earth
+            </div>
+
+            <nav>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#gallery">
+                    Gallery
+                </a>
+
+                <a href="#plant">
+                    Plant a Tree
+                </a>
+
+            </nav>
+
+            <a href="#plant" class="plant-btn">
+                Plant a Tree
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================= -->
+
+    <section class="hero">
+
+        <!-- Left Leaf -->
+
+        <img
+            src="assets/hero-leaf1.png"
+            alt="Leaf"
+            class="leaf leaf-left"
+        >
+
+
+        <!-- Center Content -->
+
+        <div class="hero-content">
+
+            <h1>
+                Plant a Tree, Grow a Future
+            </h1>
+
+            <p>
+                Join our mission to plant 1 million trees and make the Earth greener for future
+            </p>
+
+            <button class="get-btn">
+                Get Involved
+            </button>
+
+        </div>
+
+
+        <!-- Right Leaf -->
+
+        <img
+            src="assets/hero-leaf2.png"
+            alt="Leaf"
+            class="leaf leaf-right"
+        >
+
+    </section>
+
+
+    <!-- =========================
+         CHOOSE YOUR TREES
+    ========================= -->
+
+    <section
+        class="tree-section"
+        id="gallery"
+    >
+
+        <h2>
+            Choose Your Trees
+        </h2>
+
+
+        <div class="tree-layout">
+
+
+            <!-- =====================
+                 CATEGORIES
+            ====================== -->
+
+            <aside class="categories">
+
+                <h3>
+                    Categories
+                </h3>
+
+
+                <!--
+                    JavaScript will
+                    dynamically load
+                    categories here.
+                -->
+
+                <ul id="category-list">
+
+                    <!-- All Trees -->
+
+                    <li
+                        id="all-trees"
+                        class="active"
+                    >
+                        All Trees
+                    </li>
+
+                </ul>
+
+            </aside>
+
+
+
+            <!-- =====================
+                 TREE CARDS
+            ====================== -->
+
+            <!--
+                JavaScript will
+                dynamically create
+                all tree cards here.
+            -->
+
+            <div
+                class="tree-container"
+                id="tree-container"
+            >
+
+            </div>
+
+
+
+            <!-- =====================
+                 CART
+            ====================== -->
+
+            <aside class="cart">
+
+                <h3>
+                    Your Cart
+                </h3>
+
+
+                <!--
+                    JavaScript will
+                    dynamically add
+                    cart items here.
+                -->
+
+                <div id="cart-items">
+
+                </div>
+
+
+                <!-- Cart Total -->
+
+                <div class="cart-total">
+
+                    <span>
+                        Total:
+                    </span>
+
+                    <strong id="cart-total">
+                        ৳0
+                    </strong>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TREE DETAILS MODAL
+    ========================= -->
+
+    <!--
+        This modal opens when
+        user clicks a tree name.
+    -->
+
+    <div
+        class="modal-overlay"
+        id="tree-modal"
+    >
+
+        <div class="modal">
+
+
+            <!-- Close Button -->
+
+            <button
+                class="modal-close"
+                id="modal-close"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <!-- Tree Image -->
+
+            <img
+                id="modal-image"
+                src=""
+                alt="Tree"
+            >
+
+
+            <!-- Tree Details -->
+
+            <div class="modal-content">
+
+
+                <!-- Tree Name -->
+
+                <h2 id="modal-name">
+                </h2>
+
+
+                <!-- Description -->
+
+                <p id="modal-description">
+                </p>
+
+
+                <!-- Category -->
+
+                <p>
+
+                    <strong>
+                        Category:
+                    </strong>
+
+                    <span id="modal-category">
+                    </span>
+
+                </p>
+
+
+                <!-- Price -->
+
+                <p>
+
+                    <strong>
+                        Price:
+                    </strong>
+
+                    ৳<span id="modal-price">
+                    </span>
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         ABOUT THE CAMPAIGN
+    ========================= -->
+
+    <section
+        class="about-section"
+        id="about"
+    >
+
+        <h2>
+            About the Campaign
+        </h2>
+
+
+        <div class="about-container">
+
+
+            <!-- About Image -->
+
+            <div class="about-image">
+
+                <img
+                    src="assets/about.png"
+                    alt="Green Plant"
+                >
+
+            </div>
+
+
+            <!-- About Content -->
+
+            <div class="about-content">
+
+                <p>
+
+                    Green Earth is a global tree plantation initiative dedicated to fighting
+                    climate change. Since our start, we've planted over 500,000 trees
+                    worldwide. By joining our campaign, you help restore forests, create
+                    habitats for wildlife, and combat global warming.
+
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        Restoration of natural habitats
+                    </li>
+
+                    <li>
+                        Improvement of air quality
+                    </li>
+
+                    <li>
+                        Support for local communities
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         OUR IMPACT
+    ========================= -->
+
+    <section class="impact-section">
+
+        <h2>
+            Our Impact
+        </h2>
+
+
+        <div class="impact-container">
+
+
+            <!-- Impact Card 1 -->
+
+            <div class="impact-card">
+
+                <h3>
+                    500K+
+                </h3>
+
+                <p>
+                    Trees Planted
+                </p>
+
+            </div>
+
+
+            <!-- Impact Card 2 -->
+
+            <div class="impact-card">
+
+                <h3>
+                    120+
+                </h3>
+
+                <p>
+                    Communities Involved
+                </p>
+
+            </div>
+
+
+            <!-- Impact Card 3 -->
+
+            <div class="impact-card">
+
+                <h3>
+                    30+
+                </h3>
+
+                <p>
+                    Countries Reached
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PLANT A TREE TODAY
+    ========================= -->
+
+    <section
+        class="plant-section"
+        id="plant"
+    >
+
+        <h2>
+            Plant a Tree Today
+        </h2>
+
+
+        <div class="plant-form">
+
+
+            <!-- Name -->
+
+            <input
+                type="text"
+                placeholder="Your Name"
+            >
+
+
+            <!-- Email -->
+
+            <input
+                type="email"
+                placeholder="Your Email Address"
+            >
+
+
+            <!-- Number of Trees -->
+
+            <select
+                name="trees"
+                id="trees"
+            >
+
+                <option
+                    value=""
+                    selected
+                    disabled
+                >
+                    Number of Trees
+                </option>
+
+                <option value="1">
+                    1 Tree
+                </option>
+
+                <option value="5">
+                    5 Trees
+                </option>
+
+                <option value="10">
+                    10 Trees
+                </option>
+
+                <option value="20">
+                    20 Trees
+                </option>
+
+                <option value="50">
+                    50 Trees
+                </option>
+
+                <option value="100">
+                    100 Trees
+                </option>
+
+            </select>
+
+
+            <!-- Donate Button -->
+
+            <button type="button">
+                Donate Now
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+        <p>
+            © 2025 Green Earth. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

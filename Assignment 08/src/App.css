@@ -1,0 +1,1525 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f6f8;
+  color: #102a43;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  width: 100%;
+  height: 76px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* HERO.IO LOGO */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #7c3aed;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.logo:hover {
+  color: #7c3aed;
+}
+
+.hero-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* NAVIGATION */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+}
+
+.nav-link {
+  color: #111827;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #7c3aed;
+}
+
+.nav-link.active {
+  color: #7c3aed;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+
+/* GITHUB CONTRIBUTE BUTTON */
+
+.contribute-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 44px;
+  padding: 0 18px;
+
+  background: linear-gradient(
+    135deg,
+    #6d28d9,
+    #8b5cf6
+  );
+
+  color: #ffffff;
+  border-radius: 5px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition: all 0.2s ease;
+}
+
+.contribute-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.github-icon {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* =========================================================
+   HOME PAGE
+========================================================= */
+
+.hero-section {
+  background: #f5f6f8;
+  padding: 55px 0 0;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 850px;
+}
+
+.hero-content h1 {
+  color: #102a43;
+  font-size: 54px;
+  line-height: 1.08;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+  color: #7c3aed;
+}
+
+.hero-content p {
+  max-width: 820px;
+  margin: 0 auto 24px;
+
+  color: #6b7c93;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* STORE BUTTONS */
+
+.store-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.store-button {
+  min-width: 140px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: #ffffff;
+  border: 1px solid #d5dce5;
+  border-radius: 4px;
+
+  color: #102a43;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.store-button:hover {
+  border-color: #7c3aed;
+  color: #7c3aed;
+}
+
+.play-icon {
+  color: #16a34a;
+  font-size: 18px;
+}
+
+.apple-icon {
+  color: #2563eb;
+  font-size: 13px;
+}
+
+
+/* HERO IMAGE */
+
+.hero-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 600px;
+  max-width: 85%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   HOME STATS
+========================================================= */
+
+.stats-section {
+  background: linear-gradient(
+    135deg,
+    #6d28d9,
+    #9b5de5
+  );
+
+  padding: 55px 0 60px;
+  color: #ffffff;
+}
+
+.stats-section h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.stat-item p {
+  font-size: 13px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.stat-item h3 {
+  font-size: 42px;
+  line-height: 1;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.stat-item span {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   TRENDING SECTION
+========================================================= */
+
+.trending-section {
+  background: #f5f6f8;
+  padding: 65px 0 75px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  color: #102a43;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  color: #718096;
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   APP GRID
+========================================================= */
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+
+/* =========================================================
+   APP CARD
+========================================================= */
+
+.app-card {
+  display: block;
+
+  background: #ffffff;
+
+  padding: 10px;
+
+  border-radius: 4px;
+
+  color: #102a43;
+
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+  transition: all 0.2s ease;
+}
+
+.app-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
+}
+
+
+/* CARD IMAGE */
+
+.app-card-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+
+  background: #d9d9d9;
+}
+
+
+/* CARD INFORMATION */
+
+.app-card-info {
+  padding: 10px 0 2px;
+}
+
+.app-card-title {
+  color: #102a43;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  margin-bottom: 9px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* BADGES */
+
+.app-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.download-badge,
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 4px 7px;
+
+  border-radius: 3px;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.download-badge {
+  color: #00b894;
+  background: #eefbf4;
+}
+
+.rating-badge {
+  color: #ff8a00;
+  background: #fff4e8;
+}
+
+
+/* If badges are side-by-side */
+
+.app-card-info > div:last-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* SHOW ALL */
+
+.show-all-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.show-all-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 100px;
+  height: 42px;
+
+  padding: 0 20px;
+
+  background: linear-gradient(
+    135deg,
+    #6d28d9,
+    #8b5cf6
+  );
+
+  color: #ffffff;
+
+  border-radius: 4px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.show-all-button:hover {
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   ALL APPS PAGE
+========================================================= */
+
+.apps-page {
+  background: #f5f6f8;
+  min-height: calc(100vh - 76px);
+}
+
+
+/* TITLE */
+
+.apps-title-section {
+  text-align: center;
+  padding: 65px 0 30px;
+}
+
+.apps-title-section h1 {
+  color: #102a43;
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.apps-title-section p {
+  color: #718096;
+  font-size: 15px;
+}
+
+
+/* CONTROLS */
+
+.apps-control-section {
+  padding: 0 0 70px;
+}
+
+.apps-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.apps-controls h2 {
+  color: #102a43;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.control-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* SEARCH */
+
+.search-box {
+  width: 235px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 1px solid #d5dce5;
+  border-radius: 4px;
+
+  padding: 0 12px;
+
+  color: #718096;
+}
+
+.search-box span {
+  font-size: 22px;
+  line-height: 1;
+  margin-right: 8px;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+
+  color: #102a43;
+  background: transparent;
+
+  font-size: 13px;
+}
+
+.search-box input::placeholder {
+  color: #8b98a8;
+}
+
+
+/* SORT */
+
+.sort-select {
+  height: 42px;
+
+  min-width: 155px;
+
+  padding: 0 12px;
+
+  border: 1px solid #d5dce5;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #718096;
+
+  font-size: 13px;
+
+  outline: none;
+}
+
+.sort-select:focus {
+  border-color: #7c3aed;
+}
+
+
+/* NO APP */
+
+.no-app-found {
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+
+  margin-top: 25px;
+}
+
+.no-app-found h2 {
+  color: #102a43;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.no-app-found p {
+  color: #718096;
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   APP DETAILS PAGE
+========================================================= */
+
+.details-page {
+  background: #f5f6f8;
+  padding: 55px 0 70px;
+  min-height: calc(100vh - 76px);
+}
+
+
+/* TOP */
+
+.app-details-top {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 28px;
+
+  padding-bottom: 28px;
+
+  border-bottom: 1px solid #d5dce5;
+}
+
+.details-image-wrapper {
+  width: 250px;
+  height: 250px;
+
+  background: #ffffff;
+}
+
+.details-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* INFO */
+
+.details-info {
+  padding-top: 3px;
+}
+
+.details-info h1 {
+  color: #102a43;
+
+  font-size: 27px;
+  font-weight: 800;
+
+  margin-bottom: 8px;
+}
+
+.company-name {
+  color: #718096;
+  font-size: 15px;
+}
+
+.company-name span {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.details-divider {
+  height: 1px;
+  background: #d5dce5;
+  margin: 22px 0;
+}
+
+
+/* DETAILS STATS */
+
+.details-stats {
+  display: flex;
+  align-items: flex-start;
+  gap: 55px;
+}
+
+.detail-stat {
+  min-width: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.detail-stat svg {
+  margin-bottom: 7px;
+}
+
+.detail-stat span {
+  color: #718096;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.detail-stat strong {
+  color: #102a43;
+  font-size: 29px;
+  font-weight: 800;
+}
+
+
+/* ICON COLORS */
+
+.download-icon {
+  color: #00b894;
+}
+
+.rating-icon {
+  color: #ff8a00;
+}
+
+.review-icon {
+  color: #7c3aed;
+}
+
+
+/* INSTALL */
+
+.install-btn {
+  margin-top: 20px;
+
+  min-height: 42px;
+
+  padding: 0 17px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #00c98b;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.install-btn:hover {
+  background: #00b77c;
+}
+
+.install-btn.installed {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   RATINGS
+========================================================= */
+
+.ratings-section {
+  padding: 30px 0 25px;
+
+  border-bottom: 1px solid #d5dce5;
+}
+
+.ratings-section h2 {
+  color: #102a43;
+  font-size: 19px;
+  margin-bottom: 15px;
+}
+
+.chart-wrapper {
+  width: 100%;
+  max-width: 1050px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description-section {
+  padding: 28px 0 10px;
+}
+
+.description-section h2 {
+  color: #102a43;
+  font-size: 19px;
+  margin-bottom: 18px;
+}
+
+.description-section p {
+  color: #667b91;
+
+  font-size: 15px;
+  line-height: 1.75;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   404
+========================================================= */
+
+.app-not-found {
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #f5f6f8;
+}
+
+.not-found-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.not-found-content h1 {
+  color: #102a43;
+  font-size: 80px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.not-found-content h2 {
+  color: #102a43;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.not-found-content p {
+  color: #718096;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.primary-btn {
+  border: none;
+
+  padding: 13px 28px;
+
+  border-radius: 4px;
+
+  background: linear-gradient(
+    135deg,
+    #6d28d9,
+    #8b5cf6
+  );
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   INSTALLATION PAGE
+========================================================= */
+
+.installation-page {
+  background: #f5f6f8;
+  min-height: calc(100vh - 76px);
+  padding: 65px 0 70px;
+}
+
+
+/* INSTALLATION TITLE */
+
+.installation-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.installation-title h1 {
+  color: #102a43;
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.installation-title p {
+  color: #718096;
+  font-size: 16px;
+}
+
+
+/* INSTALLATION CONTROLS */
+
+.installation-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 16px;
+}
+
+.installation-controls h2 {
+  color: #102a43;
+  font-size: 22px;
+}
+
+
+/* SORT SIZE */
+
+.installation-sort {
+  height: 42px;
+
+  padding: 0 14px;
+
+  border: 1px solid #d5dce5;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #718096;
+
+  font-size: 13px;
+
+  outline: none;
+}
+
+
+/* INSTALLED APP LIST */
+
+.installed-apps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.installed-app {
+  min-height: 108px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ffffff;
+
+  border-radius: 5px;
+
+  padding: 15px;
+}
+
+.installed-app-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.installed-app-image {
+  width: 78px;
+  height: 78px;
+
+  object-fit: cover;
+
+  border-radius: 5px;
+
+  background: #d9d9d9;
+}
+
+.installed-app-info h3 {
+  color: #102a43;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.installed-app-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  color: #718096;
+  font-size: 14px;
+}
+
+.installed-downloads {
+  color: #00b894;
+}
+
+.installed-rating {
+  color: #ff8a00;
+}
+
+.uninstall-btn {
+  min-width: 96px;
+  height: 42px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #00c98b;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.uninstall-btn:hover {
+  background: #00b77c;
+}
+
+
+/* EMPTY INSTALLATION */
+
+.no-installed-apps {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+}
+
+.no-installed-apps h2 {
+  color: #102a43;
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.no-installed-apps p {
+  color: #718096;
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-container {
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  width: 45px;
+  height: 45px;
+
+  border: 4px solid #e5e7eb;
+  border-top-color: #7c3aed;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  background: #001b33;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.footer-main {
+  min-height: 245px;
+
+  display: grid;
+
+  grid-template-columns: 1.5fr 1fr 1fr;
+
+  gap: 80px;
+
+  padding: 55px 0 38px;
+}
+
+
+/* FOOTER BRAND */
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  margin-bottom: 20px;
+}
+
+.footer-brand p {
+  max-width: 370px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* QUICK LINKS */
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  margin-bottom: 18px;
+}
+
+.footer-links a {
+  color: #8b5cf6;
+
+  font-size: 15px;
+
+  margin-bottom: 11px;
+
+  transition: 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #c4b5fd;
+}
+
+
+/* SOCIAL */
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-icons a {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  color: #001b33;
+
+  border-radius: 50%;
+
+  transition: all 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+}
+
+.social-icons svg {
+  width: 21px;
+  height: 21px;
+}
+
+.social-text {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.facebook-text {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+  padding: 22px 0;
+
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .apps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .app-details-top {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .details-image-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  .details-stats {
+    gap: 30px;
+  }
+
+  .footer-main {
+    gap: 40px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .container {
+    padding: 0 18px;
+  }
+
+
+  /* NAVBAR */
+
+  .navbar {
+    height: auto;
+    padding: 14px 0;
+  }
+
+  .navbar-inner {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .contribute-btn {
+    min-height: 40px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .nav-menu {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 25px;
+  }
+
+
+  /* HERO */
+
+  .hero-section {
+    padding-top: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .store-buttons {
+    flex-wrap: wrap;
+  }
+
+  .hero-image {
+    width: 500px;
+    max-width: 100%;
+  }
+
+
+  /* STATS */
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .stats-section h2 {
+    font-size: 25px;
+  }
+
+
+  /* APP GRID */
+
+  .apps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+
+  /* ALL APPS */
+
+  .apps-title-section {
+    padding-top: 45px;
+  }
+
+  .apps-title-section h1 {
+    font-size: 30px;
+  }
+
+  .apps-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .control-right {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .search-box,
+  .sort-select {
+    width: 100%;
+  }
+
+
+  /* DETAILS */
+
+  .app-details-top {
+    grid-template-columns: 1fr;
+  }
+
+  .details-image-wrapper {
+    width: 100%;
+    max-width: 280px;
+    height: 280px;
+    margin: 0 auto;
+  }
+
+  .details-info h1 {
+    font-size: 24px;
+  }
+
+  .details-stats {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+
+  /* INSTALLATION */
+
+  .installation-title h1 {
+    font-size: 32px;
+  }
+
+  .installation-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .installation-sort {
+    width: 100%;
+  }
+
+  .installed-app {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .installed-app-left {
+    align-items: flex-start;
+  }
+
+  .installed-app-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .installed-app-info h3 {
+    font-size: 15px;
+  }
+
+  .installed-app-meta {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .uninstall-btn {
+    min-width: 80px;
+  }
+
+
+  /* FOOTER */
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 45px 0 35px;
+  }
+
+  .footer-social {
+    align-items: flex-start;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .apps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .nav-menu {
+    gap: 18px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .contribute-btn span {
+    display: none;
+  }
+
+  .contribute-btn {
+    width: 42px;
+    padding: 0;
+  }
+
+  .installed-app {
+    flex-direction: column;
+  }
+
+  .uninstall-btn {
+    width: 100%;
+  }
+
+}
